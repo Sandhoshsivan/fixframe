@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FixFrame — India's Premier Visual Production Crew</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Raleway:wght@200;300;400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- SCROLL PROGRESS BAR -->
+  <div id="scrollProgress" class="scroll-progress"></div>
+
+  <!-- LOADING SCREEN -->
+  <div id="loader" class="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">FIX<em>FRAME</em></div>
+      <div class="loader-subtitle">India's Premier Visual Production Crew</div>
+      <div class="loader-line"></div>
+    </div>
+  </div>
+
+  <!-- FILM GRAIN OVERLAY -->
+  <div class="grain-overlay"></div>
+
+  <!-- NAVIGATION -->
+  <nav id="navbar">
+    <button class="logo" data-section="home">FIX<em>FRAME</em></button>
+    <div class="nav-links" id="navLinks">
+      <button class="nav-link" data-section="archive">The Archive</button>
+      <button class="nav-link" data-section="ledger">The Ledger</button>
+      <button class="nav-link" data-section="studio">The Studio</button>
+      <button class="nav-link" data-section="inquiry">The Inquiry</button>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose">&times;</button>
+    <button class="mobile-nav-link" data-section="archive">The Archive</button>
+    <button class="mobile-nav-link" data-section="ledger">The Ledger</button>
+    <button class="mobile-nav-link" data-section="studio">The Studio</button>
+    <button class="mobile-nav-link" data-section="inquiry">The Inquiry</button>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       SECTION: HOME
+  ═══════════════════════════════════════ -->
+  <section id="home" class="section active">
+
+    <!-- Hero — Full-Bleed Cinematic -->
+    <div class="hero">
+      <div class="hero-slideshow">
+        <img src="https://images.unsplash.com/photo-1583089892943-e02e5b017b6a?w=1920&h=1080&fit=crop&q=80" class="hero-slide active" id="heroSlide1" alt="Indian wedding celebration" />
+        <img src="https://images.unsplash.com/photo-1587271407850-8d438ca9fdf2?w=1920&h=1080&fit=crop&q=80" class="hero-slide" id="heroSlide2" alt="Grand wedding venue" />
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="hero-bg-grid"></div>
+
+      <div class="hero-content">
+        <div class="eyebrow fade-up" style="animation-delay:.2s">Est. 2019 &middot; Tamil Nadu, India</div>
+        <h1 class="hero-title fade-up" style="animation-delay:.4s">
+          FIX<em>FRAME</em>
+        </h1>
+        <div class="hero-subtitle fade-up" style="animation-delay:.6s">
+          <span class="hero-cycling-word" id="heroCyclingWord">Weddings</span> &middot; Photography &middot; Videography &middot; Digital Invitations
+        </div>
+        <p class="hero-tagline fade-up" style="animation-delay:.7s">A crew of artists capturing India's most beautiful stories.</p>
+        <div class="hero-ctas fade-up" style="animation-delay:.85s">
+          <button class="btn-primary" data-section="archive">Explore the Archive</button>
+          <button class="btn-ghost" data-section="inquiry">Begin Inquiry</button>
+        </div>
+      </div>
+
+      <div class="scroll-indicator fade-in" style="animation-delay:1.4s">
+        <div class="scroll-line"></div>
+        <span>Scroll</span>
+      </div>
+    </div>
+
+    <!-- Trusted By -->
+    <div class="trusted-section scroll-reveal">
+      <div class="trusted-label">Trusted By</div>
+      <div class="trusted-logos">
+        <span class="trusted-brand">Sundari Silks</span>
+        <span class="trusted-divider">/</span>
+        <span class="trusted-brand">Tamil Nadu Tourism</span>
+        <span class="trusted-divider">/</span>
+        <span class="trusted-brand">Kalakshetra</span>
+        <span class="trusted-divider">/</span>
+        <span class="trusted-brand">Conde Nast India</span>
+        <span class="trusted-divider">/</span>
+        <span class="trusted-brand">National Geographic India</span>
+        <span class="trusted-divider">/</span>
+        <span class="trusted-brand">500+ Families</span>
+      </div>
+    </div>
+
+    <!-- Horizontal Gallery -->
+    <div class="gallery-section">
+      <div class="gallery-header scroll-reveal">
+        <div>
+          <div class="eyebrow">Selected Work</div>
+          <h2 class="section-title-italic">Recent Archive</h2>
+        </div>
+        <div class="gallery-arrows">
+          <button class="arrow-btn" id="galleryPrev">&larr;</button>
+          <button class="arrow-btn" id="galleryNext">&rarr;</button>
+        </div>
+      </div>
+      <div class="gallery-track" id="galleryTrack">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+
+    <!-- Testimonials -->
+    <div class="testimonials-section">
+      <div class="testimonials-inner scroll-reveal">
+        <div class="eyebrow">Client Words</div>
+        <div class="testimonial-quote" id="testimonialQuote"></div>
+        <div class="testimonial-author" id="testimonialAuthor"></div>
+        <div class="testimonial-role" id="testimonialRole"></div>
+        <div class="testimonial-nav">
+          <button class="testimonial-dot active" data-index="0"></button>
+          <button class="testimonial-dot" data-index="1"></button>
+          <button class="testimonial-dot" data-index="2"></button>
+          <button class="testimonial-dot" data-index="3"></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-bar scroll-reveal">
+      <div class="stat">
+        <div class="stat-num" data-value="6+">6+</div>
+        <div class="stat-label">Years as a Crew</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <div class="stat-num" data-value="500+">500+</div>
+        <div class="stat-label">Projects Delivered</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <div class="stat-num" data-value="18">18</div>
+        <div class="stat-label">States Covered</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <div class="stat-num" data-value="12">12</div>
+        <div class="stat-label">Crew Members</div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       SECTION: THE ARCHIVE
+  ═══════════════════════════════════════ -->
+  <section id="archive" class="section">
+
+    <div class="section-header">
+      <div class="eyebrow scroll-reveal">The Archive</div>
+      <div class="work-header-row scroll-reveal">
+        <h2 class="page-title">Selected<br><em>Works</em></h2>
+        <div class="filter-row" id="filterRow">
+          <button class="filter-btn active" data-filter="All">All</button>
+          <button class="filter-btn" data-filter="Weddings">Weddings</button>
+          <button class="filter-btn" data-filter="Pre-Wedding">Pre-Wedding</button>
+          <button class="filter-btn" data-filter="Motion">Motion</button>
+          <button class="filter-btn" data-filter="Brand">Brand</button>
+          <button class="filter-btn" data-filter="Editorial">Editorial</button>
+          <button class="filter-btn" data-filter="Events">Events</button>
+          <button class="filter-btn" data-filter="Digital Invites">Digital Invites</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="work-grid" id="workGrid">
+      <!-- Populated by JS -->
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       SECTION: THE LEDGER
+  ═══════════════════════════════════════ -->
+  <section id="ledger" class="section">
+
+    <div class="section-header">
+      <div class="eyebrow scroll-reveal">The Ledger</div>
+      <h2 class="page-title scroll-reveal">Experience<br><em>Packages</em></h2>
+      <p class="section-desc scroll-reveal">
+        Every engagement is a collaboration. Our crew doesn't offer packages — we offer outcomes, with the right team assembled for the weight of your story.
+      </p>
+    </div>
+
+    <div id="servicesGrid">
+      <!-- Populated by React -->
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       SECTION: THE STUDIO
+  ═══════════════════════════════════════ -->
+  <section id="studio" class="section">
+
+    <div class="about-intro">
+      <div class="about-intro-text">
+        <div class="eyebrow scroll-reveal">The Studio</div>
+        <h2 class="page-title scroll-reveal">We are a crew,<br><em>not a studio.</em></h2>
+        <p class="about-p scroll-reveal">
+          FixFrame was born in Tamil Nadu with a simple belief — that India's richest stories deserve a crew that understands them from the inside. We are photographers, cinematographers, editors, drone pilots, and artists who grew up in these cultures.
+        </p>
+        <p class="about-p scroll-reveal">
+          From the grand temples of Madurai to the palaces of Rajasthan, from intimate Chennai weddings to Himalayan brand campaigns — our crew travels across India. We handle everything: photography, cinematic films, pre-wedding shoots, event coverage, and even bespoke digital wedding cards and invitation suites.
+        </p>
+        <div class="about-disciplines scroll-reveal">
+          <div class="discipline">
+            <div class="discipline-title">Photography</div>
+            <div class="discipline-sub">Weddings &middot; Pre-Wedding &middot; Portraits &middot; Events &middot; Editorial &middot; Brand</div>
+          </div>
+          <div class="discipline">
+            <div class="discipline-title">Cinematic Films</div>
+            <div class="discipline-sub">Wedding Films &middot; Documentary &middot; Corporate &middot; Aerial &middot; Save-the-Date</div>
+          </div>
+          <div class="discipline">
+            <div class="discipline-title">Digital Invitations</div>
+            <div class="discipline-sub">Wedding Cards &middot; Animated Invites &middot; WhatsApp Cards &middot; RSVP &middot; Video Invites</div>
+          </div>
+          <div class="discipline">
+            <div class="discipline-title">Cultures We Cover</div>
+            <div class="discipline-sub">Tamil &middot; Telugu &middot; Malayali &middot; Kannada &middot; North Indian &middot; Muslim &middot; Christian &middot; Multi-faith</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- The Crew Grid -->
+    <div class="crew-section">
+      <div class="crew-header scroll-reveal">
+        <div class="eyebrow">The Crew</div>
+        <h3 class="section-title-italic">Meet Our Team</h3>
+      </div>
+      <div class="crew-grid" id="crewGrid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+
+    <!-- Gear & Tech Strip -->
+    <div class="gear-strip scroll-reveal">
+      <div class="gear-strip-label">Gear & Tech</div>
+      <div class="gear-strip-list" id="gearList">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+
+    <!-- Awards Strip -->
+    <div class="awards-strip scroll-reveal">
+      <div class="awards-strip-label">Awards & Recognition</div>
+      <div class="awards-strip-list" id="awardsList">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       SECTION: THE INQUIRY
+  ═══════════════════════════════════════ -->
+  <section id="inquiry" class="section">
+
+    <div class="inquiry-layout">
+      <div class="inquiry-header">
+        <div class="eyebrow scroll-reveal">The Inquiry</div>
+        <h2 class="page-title scroll-reveal">Let's Create<br><em>Together</em></h2>
+        <p class="section-desc scroll-reveal">
+          Our crew responds to all inquiries within 24 hours. We travel across India — if you have a date and location in mind, reach out early to secure our team.
+        </p>
+        <div class="inquiry-divider"></div>
+      </div>
+
+      <form class="inquiry-form" id="inquiryForm">
+        <div class="form-row">
+          <div class="form-field">
+            <label>Full Name</label>
+            <input type="text" name="name" required placeholder="Your full name" />
+          </div>
+          <div class="form-field">
+            <label>Email Address</label>
+            <input type="email" name="email" required placeholder="your@email.com" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label>Phone</label>
+            <input type="tel" name="phone" placeholder="+91 98765 43210" />
+          </div>
+          <div class="form-field">
+            <label>Preferred Date</label>
+            <input type="date" name="date" />
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label>Project Type</label>
+          <div class="project-pills" id="projectPills">
+            <!-- Populated by JS -->
+          </div>
+          <input type="hidden" name="project" id="projectInput" />
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label>Location</label>
+            <input type="text" name="location" placeholder="City, Country" />
+          </div>
+          <div class="form-field">
+            <label>Budget Range</label>
+            <select name="budget" id="budgetSelect">
+              <option value="" disabled selected>Select a range</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label>Vision Statement</label>
+          <textarea name="message" rows="5" placeholder="Describe your project, timeline, and any inspiration..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary btn-submit">Submit Inquiry</button>
+      </form>
+
+      <div class="form-success" id="formSuccess" style="display:none">
+        <div class="success-icon">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+            <circle cx="24" cy="24" r="23" stroke="rgba(201,169,110,0.5)" stroke-width="1"/>
+            <path d="M15 24.5L21 30.5L33 18.5" stroke="#c9a96e" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="success-title">Thank you.</div>
+        <div class="success-sub">Your inquiry has been received. We will be in touch within 24 hours to begin the conversation.</div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-main">
+      <div class="footer-brand">
+        <div class="footer-logo">FIX<em>FRAME</em></div>
+      </div>
+      <div class="footer-nav">
+        <button class="footer-link" data-section="archive">Archive</button>
+        <button class="footer-link" data-section="ledger">Ledger</button>
+        <button class="footer-link" data-section="studio">Studio</button>
+        <button class="footer-link" data-section="inquiry">Inquiry</button>
+      </div>
+      <div class="footer-social-links">
+        <a href="#" class="footer-social">Instagram</a>
+        <a href="#" class="footer-social">YouTube</a>
+        <a href="#" class="footer-social">LinkedIn</a>
+        <a href="#" class="footer-social">WhatsApp</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 FixFrame</span>
+      <span>hello@fixframe.in</span>
+      <span>Chennai &middot; Madurai &middot; All of India</span>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOATING BUTTON -->
+  <a href="https://wa.me/919876543210?text=Hi%20FixFrame!%20I%27d%20like%20to%20inquire%20about%20your%20services." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 32 32" width="28" height="28" fill="#fff"><path d="M16.004 0h-.008C7.174 0 0 7.176 0 16c0 3.5 1.13 6.742 3.05 9.376L1.054 31.39l6.204-1.962A15.9 15.9 0 0016.004 32C24.826 32 32 24.822 32 16S24.826 0 16.004 0zm9.342 22.616c-.392 1.104-1.942 2.02-3.186 2.288-.852.18-1.964.324-5.71-1.228-4.796-1.986-7.882-6.846-8.12-7.164-.23-.318-1.886-2.514-1.886-4.794s1.192-3.404 1.616-3.87c.424-.466.924-.582 1.232-.582.308 0 .616.002.886.016.284.014.666-.108 1.042.794.392.938 1.33 3.244 1.446 3.478.116.234.194.508.038.818-.156.318-.234.508-.466.784-.232.276-.488.616-.698.826-.232.232-.474.484-.204.95.27.466 1.202 1.98 2.58 3.208 1.772 1.578 3.266 2.068 3.732 2.302.466.234.738.194 1.008-.116.278-.318 1.186-1.38 1.502-1.854.316-.466.632-.39 1.064-.234.434.156 2.742 1.294 3.21 1.528.466.234.778.35.894.544.116.194.116 1.122-.276 2.226z"/></svg>
+  </a>
+
+  <!-- BACK TO TOP -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">&uarr;</button>
+
+  <!-- React + Babel CDN (powers dynamic components) -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- App scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/workgrid.js"></script>
+  <script type="text/babel" src="js/services.jsx"></script>
+  <script src="js/inquiry.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Testimonial rotation (inline, depends on data.js) -->
+  <script>
+    (function() {
+      let currentTestimonial = 0;
+
+      function showTestimonial(index) {
+        const quote = document.getElementById('testimonialQuote');
+        const author = document.getElementById('testimonialAuthor');
+        const role = document.getElementById('testimonialRole');
+        if (!quote || !TESTIMONIALS || !TESTIMONIALS[index]) return;
+
+        quote.style.opacity = '0';
+        author.style.opacity = '0';
+        role.style.opacity = '0';
+
+        setTimeout(() => {
+          quote.textContent = '\u201C' + TESTIMONIALS[index].quote + '\u201D';
+          author.textContent = TESTIMONIALS[index].author;
+          role.textContent = TESTIMONIALS[index].role;
+          quote.style.opacity = '1';
+          author.style.opacity = '1';
+          role.style.opacity = '1';
+        }, 400);
+
+        document.querySelectorAll('.testimonial-dot').forEach((dot, i) => {
+          dot.classList.toggle('active', i === index);
+        });
+
+        currentTestimonial = index;
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        showTestimonial(0);
+
+        document.querySelectorAll('.testimonial-dot').forEach(dot => {
+          dot.addEventListener('click', () => {
+            showTestimonial(parseInt(dot.dataset.index));
+          });
+        });
+
+        // Auto-rotate every 6 seconds
+        setInterval(() => {
+          const next = (currentTestimonial + 1) % TESTIMONIALS.length;
+          showTestimonial(next);
+        }, 6000);
+      });
+    })();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+# Old root-level duplicates (actual files are in js/ and css/)
+/data.js
+/gallery.js
+/inquiry.js
+/main.js
+/navigation.js
+/services.jsx
+/style.css
+/workgrid.js
+
+# Archives
+*.zip
+
+# OS
+.DS_Store
